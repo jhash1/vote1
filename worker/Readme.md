@@ -1,4 +1,4 @@
-##Worker app
+##Worker Java app
 
 [![Build Status](http://104.196.13.118:8080/buildStatus/icon?job=worker-build)](http://104.196.13.118:8080/job/worker-build/)
 
