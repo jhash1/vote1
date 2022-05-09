@@ -1,6 +1,8 @@
 Example Voting App
 =========
 
+Java app 2
+
 Getting started
 ---------------
 
