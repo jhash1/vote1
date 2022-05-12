@@ -24,8 +24,9 @@ pipeline {
     }
 }
 
-post {
-    always{
-        echo "Build pipeline for the worker is complete"
+    post {
+      always{
+       echo "Build pipeline for the worker is complete"
     }
+  }
 }
