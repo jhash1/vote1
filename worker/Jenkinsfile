@@ -15,15 +15,23 @@ pipeline {
     }
         stage('test'){
             echo 'Running Unit tests on worker app'
-            
+            dir('worker'){
+  	    sh 'mvn clean test' 
         }
     }
         stage('package'){
             echo 'Packaging worker app'
+ 	    dir('worker'){
+            sh 'mvn package -DskipTests'
         }
     }
 }
 
+post {
+    always{
+        archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+        echo "Build pipeline for the worker is complete.."
+    }
     post {
       always{
        echo "Build pipeline for the worker is complete"
