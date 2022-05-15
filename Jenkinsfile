@@ -7,20 +7,20 @@ pipeline {
     }
 
     stages{
-        stage('build'){
+        stage('worker-build'){
             echo 'Compiling worker app'
             dir('worker'){
             sh 'mvn compile'
             }
         }
     
-        stage('test'){
+        stage('worker-item-test'){
             echo 'Running Unit tests on worker app'
             dir('worker'){
   	    sh 'mvn clean test' 
             }
         }   
-        stage('package'){
+        stage('worker package'){
             echo 'Packaging worker app'
  	    dir('worker'){
             sh 'mvn package -DskipTests'
